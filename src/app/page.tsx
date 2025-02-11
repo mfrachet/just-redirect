@@ -7,14 +7,7 @@ export default async function Page({
 }) {
   const r = (await searchParams)?.r;
 
-  if (!r)
-    return (
-      <html>
-        <body>
-          <h1>Hello!</h1>
-        </body>
-      </html>
-    );
+  if (!r) return <h1>Hello!</h1>;
 
   return redirect(r as string);
 }
