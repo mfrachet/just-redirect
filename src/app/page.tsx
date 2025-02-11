@@ -9,5 +9,7 @@ export default async function Page({
 
   if (!r) return <h1>Hello!</h1>;
 
-  return redirect(r as string);
+  const decodedBase64 = Buffer.from(r as string, "base64").toString("utf-8");
+
+  return redirect(decodedBase64);
 }
